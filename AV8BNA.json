@@ -3752,6 +3752,22 @@
                                                                                                    "type": "integer"
                                                                                         } ]
                                                                     },
+                                                      "STAB_ARROW": {
+                                                                            "category": "Gauges",
+                                                                        "control_type": "analog_gauge",
+                                                                         "description": "STAB Arrow up/down Drum Digit",
+                                                                          "identifier": "STAB_ARROW",
+                                                                              "inputs": [  ],
+                                                                             "outputs": [ {
+                                                                                                "address": 30886,
+                                                                                            "description": "gauge position",
+                                                                                                   "mask": 65535,
+                                                                                              "max_value": 65535,
+                                                                                               "shift_by": 0,
+                                                                                                 "suffix": "",
+                                                                                                   "type": "integer"
+                                                                                        } ]
+                                                                    },
                                                        "TOT_FUEL1": {
                                                                             "category": "Gauges",
                                                                         "control_type": "analog_gauge",
@@ -7093,23 +7109,6 @@
                                                                                           } ],
                                                                       "physical_variant": "toggle_switch"
                                                                }
-                                            },
-           "STAB Arrow up/down Drum Digit": {
-                                                "STAB_ARROW": {
-                                                                      "category": "STAB Arrow up/down Drum Digit",
-                                                                  "control_type": "analog_gauge",
-                                                                    "identifier": "STAB_ARROW",
-                                                                        "inputs": [  ],
-                                                                       "outputs": [ {
-                                                                                          "address": 30886,
-                                                                                      "description": "gauge position",
-                                                                                             "mask": 65535,
-                                                                                        "max_value": 65535,
-                                                                                         "shift_by": 0,
-                                                                                           "suffix": "",
-                                                                                             "type": "integer"
-                                                                                  } ]
-                                                              }
                                             },
                                     "Seat": {
                                                 "SEAT_SAFE_LEVER": {
