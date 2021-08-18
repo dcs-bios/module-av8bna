@@ -1,6 +1,6 @@
 BIOS.protocol.beginModule("AV8BNA", 0x7800)
 BIOS.protocol.setExportModuleAircrafts({"AV8BNA"})
---by WarLord (aka BlackLibrary) v.2.1
+--by WarLord (aka BlackLibrary) v.2.2
 
 local inputProcessors = moduleBeingDefined.inputProcessors
 local documentation = moduleBeingDefined.documentation
@@ -154,7 +154,7 @@ definePushButton("M_Warning", 35, 3199, 199, "Master Warning Panel", "Master War
 
 -- Fuel Quantity Indicator
 defineMultipositionSwitch("FUEL_SEL", 21, 3379, 379, 7, 0.33, "Fuel Panel", "Fuel Totalizer Selector OUTBD/INBD/WING/INT/TOT/FEED/BIT")
-defineAV8BCommSelector("BINGO_SET", 21, 3380, 0.01, 380, "Fuel Panel", "Bingo Fuel Set Knob")
+defineAV8BCommSelector("BINGO_SET", 21, 3380, 0.1, 380, "Fuel Panel", "Bingo Fuel Set Knob")
 
 -- MPCD left
 definePushButton("MPCD_L_1", 26, 3200, 200, "MPCD Left", "MPCD Left Button 1")
@@ -670,13 +670,13 @@ end, 1, "External Aircraft Model", "Weight ON Wheels Tail Gear")
 local function getComm1Text()
 	if parse_indication(5) == nil then return (" "):rep(2) end
 	local txt = parse_indication(5)["ufc_chnl_1_m"] or parse_indication(5)["ufc_chnl_1_v"] or ""
-	return (" "):rep(2 - #txt) .. txt
+	return (" "):rep(2 - #txt) .. txt:sub(3,4)
 end
 defineString("UFC_COMM1_DISPLAY", getComm1Text, 2, "UFC", "UFC Comm1 Preset Display")
 local function getComm2Text()
 	if parse_indication(5) == nil then return (" "):rep(2) end
 	local txt = parse_indication(5)["ufc_chnl_2_m"] or parse_indication(5)["ufc_chnl_2_v"] or ""
-	return (" "):rep(2 - #txt) .. txt
+	return (" "):rep(2 - #txt) .. txt:sub(3,4)
 end
 defineString("UFC_COMM2_DISPLAY", getComm2Text, 2, "UFC", "UFC Comm2 Preset Display")
 
